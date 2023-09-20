@@ -8,8 +8,8 @@ const SaleRevenue = () => {
     <React.Fragment>
       <div className="card-title-group align-start mb-2">
         <CardTitle>
-          <h6 className="title">Revenue</h6>
-          <p>In last 30 days revenue from subscription.</p>
+          <h6 className="title">Total Cars</h6>
+          <p>In last 30 days.</p>
         </CardTitle>
         <div className="card-tools">
           <TooltipComponent
@@ -25,7 +25,7 @@ const SaleRevenue = () => {
         <div className="nk-sale-data-group flex-md-nowrap g-4">
           <div className="nk-sale-data">
             <span className="amount">
-              14,299.59{" "}
+              59{" "}
               <span className="change down text-danger">
                 <Icon name="arrow-long-down" />
                 16.93%
@@ -35,7 +35,7 @@ const SaleRevenue = () => {
           </div>
           <div className="nk-sale-data">
             <span className="amount">
-              7,299.59{" "}
+              10{" "}
               <span className="change up text-success">
                 <Icon name="arrow-long-up" />
                 4.26%

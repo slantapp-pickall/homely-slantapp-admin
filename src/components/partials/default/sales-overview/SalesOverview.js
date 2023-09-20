@@ -8,7 +8,7 @@ const SalesOverview = () => {
     <React.Fragment>
       <div className="card-title-group align-start gx-3 mb-3">
         <div className="card-title">
-          <h6 className="title">Total Overview</h6>
+          <h6 className="title">Total Revenue</h6>
           <p>
             In 30 days.{" "}
           </p>

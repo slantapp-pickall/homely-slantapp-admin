@@ -7,7 +7,7 @@ export const activityData = [
     initial: "KJ",
     theme: "success",
     name: "Kieth Jensen",
-    activity: "requested to Withdrawal",
+    activity: "Booked an apartment",
     time: "2 hours ago",
   },
   {
@@ -15,7 +15,7 @@ export const activityData = [
     initial: "HS",
     theme: "warning",
     name: "Harry Simpson",
-    activity: "placed a Order",
+    activity: "Placed a Car hire Order",
     time: "2 hours ago",
   },
   {
@@ -23,7 +23,7 @@ export const activityData = [
     initial: "SM",
     theme: "azure",
     name: "Stephenie Marshall",
-    activity: "got a huge bonus",
+    activity: "Booked a short-let with a car",
     time: "2 hours ago",
   },
   {
@@ -31,7 +31,7 @@ export const activityData = [
     initial: "NC",
     theme: "purple",
     name: "Nicolas Carr",
-    activity: "deposited funds",
+    activity: "Transaction successful",
     time: "2 hours ago",
   },
   {
@@ -39,7 +39,7 @@ export const activityData = [
     initial: "TM",
     theme: "pink",
     name: "Timothy Moreno",
-    activity: "placed a Order",
+    activity: "Booked a service apartment",
     time: "2 hours ago",
   },
 ];
