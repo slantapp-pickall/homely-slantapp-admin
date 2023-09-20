@@ -2,7 +2,7 @@ const paymentData = [
     {
       id: 1,
       ref: 4947,
-      bill: "Enterprize Year Subscription",
+      bill: "Apartment booking with Car hire",
       issue: "10-05-2019",
       due: "10-13-2019",
       total: "599.00",
@@ -11,7 +11,7 @@ const paymentData = [
     {
       id: 2,
       ref: 4904,
-      bill: "Maintenance Year Subscription",
+      bill: "Service apartment",
       issue: "06-19-2019",
       due: "06-26-2019",
       total: "99.00",
@@ -20,7 +20,7 @@ const paymentData = [
     {
       id: 3,
       ref: 4829,
-      bill: "Enterprize Year Subscription",
+      bill: "Apartment booking with Car hire",
       issue: "10-04-2018",
       due: "10-12-2018",
       total: "599.00",
@@ -29,7 +29,7 @@ const paymentData = [
     {
       id: 4,
       ref: 4830,
-      bill: "Enterprize Anniversary Subscription",
+      bill: "Apartment with gym and car hire",
       issue: "12-04-2018",
       due: "14-12-2018",
       total: "399.00",
@@ -38,7 +38,7 @@ const paymentData = [
     {
       id: 5,
       ref: 4840,
-      bill: "Enterprize Coverage Subscription",
+      bill: "House short-let booking",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -47,7 +47,7 @@ const paymentData = [
     {
       id: 6,
       ref: 4844,
-      bill: "	Manual Subscription Adjustments",
+      bill: "	Vila Estate apartment",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -65,7 +65,7 @@ const paymentData = [
     {
       id: 8,
       ref: 4848,
-      bill: "Tiered Subscription",
+      bill: "Car hire",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -74,7 +74,7 @@ const paymentData = [
     {
       id: 9,
       ref: 4849,
-      bill: "Tiered Subscription",
+      bill: "Car hire",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -83,7 +83,7 @@ const paymentData = [
     {
       id: 10,
       ref: 4750,
-      bill: "Flexible Subscription Plan",
+      bill: "House booking",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -92,7 +92,7 @@ const paymentData = [
     {
       id: 11,
       ref: 4510,
-      bill: "Enterprize Year Subscription",
+      bill: "Apartment booking with Car hire",
       issue: "10-05-2019",
       due: "10-13-2019",
       total: "599.00",
@@ -101,7 +101,7 @@ const paymentData = [
     {
       id: 12,
       ref: 4520,
-      bill: "Maintenance Year Subscription",
+      bill: "Service apartment",
       issue: "06-19-2019",
       due: "06-26-2019",
       total: "99.00",
@@ -110,7 +110,7 @@ const paymentData = [
     {
       id: 13,
       ref: 4530,
-      bill: "Enterprize Year Subscription",
+      bill: "Apartment booking with Car hire",
       issue: "10-04-2018",
       due: "10-12-2018",
       total: "599.00",
@@ -119,7 +119,7 @@ const paymentData = [
     {
       id: 14,
       ref: 4560,
-      bill: "Enterprize Anniversary Subscription",
+      bill: "Apartment with gym and car hire",
       issue: "12-04-2018",
       due: "14-12-2018",
       total: "399.00",
@@ -128,7 +128,7 @@ const paymentData = [
     {
       id: 15,
       ref: 4570,
-      bill: "Enterprize Coverage Subscription",
+      bill: "House short-let booking",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -137,7 +137,7 @@ const paymentData = [
     {
       id: 16,
       ref: 4580,
-      bill: "	Manual Subscription Adjustments",
+      bill: "	Vila Estate apartment",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -155,7 +155,7 @@ const paymentData = [
     {
       id: 18,
       ref: 4600,
-      bill: "Tiered Subscription",
+      bill: "Car hire",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -164,7 +164,7 @@ const paymentData = [
     {
       id: 19,
       ref: 4425,
-      bill: "Tiered Subscription",
+      bill: "Car hire",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",
@@ -173,7 +173,7 @@ const paymentData = [
     {
       id: 20,
       ref: 4490,
-      bill: "Flexible Subscription Plan",
+      bill: "House booking",
       issue: "12-08-2018",
       due: "13-22-2018",
       total: "99.00",

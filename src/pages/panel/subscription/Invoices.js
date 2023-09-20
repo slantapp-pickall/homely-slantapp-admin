@@ -69,13 +69,13 @@ const Invoices = () => {
                     <p>You can find all of your histories</p>
                   </BlockDes>
                 </BlockHeadContent>
-                <BlockHeadContent>
-                  <ul className="nk-block-tools gx-3">
-                      <li>
-                        <a href="#" className="btn btn-white btn-dim btn-outline-primary"><Icon name="download-cloud" /><span><span className="d-none d-sm-inline-block">Get</span> Statement</span></a>
-                      </li>
-                  </ul>
-                </BlockHeadContent>
+                {/*<BlockHeadContent>*/}
+                {/*  <ul className="nk-block-tools gx-3">*/}
+                {/*      <li>*/}
+                {/*        <a href="#" className="btn btn-white btn-dim btn-outline-primary"><Icon name="download-cloud" /><span><span className="d-none d-sm-inline-block">Get</span> Statement</span></a>*/}
+                {/*      </li>*/}
+                {/*  </ul>*/}
+                {/*</BlockHeadContent>*/}
             </BlockBetween>
         </BlockHead>
         <Block>
