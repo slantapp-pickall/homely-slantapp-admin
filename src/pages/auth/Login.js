@@ -45,16 +45,7 @@ const Login = () => {
         }, 1000);
       }
       localStorage.setItem("accessToken", response.token);
-      toast.success("Login successful", {
-        position: "bottom-right",
-        autoClose: true,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: false,
-        closeButton: <CloseButton />,
-      });
+      toast.success("Login successful");
       setTimeout(() => {
         window.history.pushState(
           `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`,

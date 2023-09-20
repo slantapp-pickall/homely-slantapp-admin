@@ -8,6 +8,7 @@ import SubsTicketDetails from "../pages/panel/subscription/TicketDetails";
 import SubsSupport from "../pages/panel/subscription/Support";
 import SubsProperty from "../pages/pre-built/properties/PropertyDetails";
 import SubsProperties from "../pages/pre-built/properties/PropertyCard";
+import SubCars from "../pages/pre-built/cars/ProductCard";
 import SubsUser from "../pages/panel/subscription/User";
 import SubsProfileLayout from "../pages/panel/subscription/ProfileLayout";
 import SubsProfile from "../pages/panel/subscription/Profile";
@@ -37,6 +38,7 @@ import Error504Classic from "../pages/error/504-classic";
 import InvoicePrint from "../pages/panel/subscription/InvoicePrint";
 import SubsInvoicePrint from "../pages/panel/subscription/InvoicePrint";
 import { ProductContextProvider } from "../pages/pre-built/properties/PropertyContext";
+import { CarContextProvider } from "../pages/pre-built/cars/ProductContext";
 
 
 const Pages = () => {
@@ -54,6 +56,9 @@ const Pages = () => {
         <Route path="tickets" element={<SubsTickets />}></Route>
         <Route path="ticket-details/:ticketId" element={<SubsTicketDetails />}></Route>
         <Route path="support" element={<SubsSupport />}></Route>
+        <Route element={<CarContextProvider />}>
+          <Route path="cars" element={<SubCars />}></Route>
+        </Route>
         <Route element={<ProductContextProvider />}>
           <Route path="properties" element={<SubsProperties />}></Route>
           <Route path="property-details/:productId" element={<SubsProperty />}></Route>

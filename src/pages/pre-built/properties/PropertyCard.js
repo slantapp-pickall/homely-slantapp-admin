@@ -93,7 +93,8 @@ const PropertyCard = () => {
       toilet: 0,
       dinning: 0,
       bathroom: 0,
-      pool: 0
+      pool: 0,
+      vehicle:false
     });
     reset({});
   };
@@ -139,7 +140,8 @@ const PropertyCard = () => {
       toilet,
       dinning,
       bathroom,
-      pool
+      pool,
+      vehicle
     } = form;
     const newSlider = files.map((file, index) => {
       return {
@@ -165,6 +167,7 @@ const PropertyCard = () => {
       dinning,
       bathroom,
       pool,
+      vehicle,
       available: true,
       images: newSlider
     };
@@ -382,7 +385,7 @@ const PropertyCard = () => {
                         </h5>
                         <div className="product-price text-primary h5">
                           {item.rent?.toLocaleString() &&
-                            <small className="text-muted del fs-13px">${item.rent?.toLocaleString()}</small>} $
+                            <small className="text-muted del fs-13px">${(+item.rent * 0.5)?.toLocaleString()}</small>} $
                           {item.rent?.toLocaleString()}
                         </div>
                       </div>
@@ -699,6 +702,25 @@ const PropertyCard = () => {
                     </div>
                   </div>
                 </Col>
+                '
+                <Col md="6">
+                  <div className="form-group">
+
+                    <div className="form-control-wrap">
+                      <div className="custom-control custom-switch">
+                        <input type="checkbox" className="custom-control-input" id="customSwitch9"
+                               {...register("vehicle", { required: "This field is required" })}
+                               defaultChecked={formData.vehicle}
+                               onChange={(e) => setFormData({ ...formData, vehicle: e.target.value })}
+                        />
+                        <label className="custom-control-label" htmlFor="customSwitch9">
+                          Car Hire
+                        </label>
+                      </div>
+                      {errors.vehicle && <span className="invalid">{errors.vehicle.message}</span>}
+                    </div>
+                  </div>
+                </Col>
 
                 <Col size="12">
                   <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}>
@@ -724,9 +746,9 @@ const PropertyCard = () => {
                 </Col>
                 <Col size="12">
                   <Button color="primary" disabled={loading}>
-                          {loading ? <Spinner size="sm" color="light" /> :
-                            <span>Add Property</span>
-                          }
+                    {loading ? <Spinner size="sm" color="light" /> :
+                      <span>Add Property</span>
+                    }
                   </Button>
                 </Col>
               </Row>

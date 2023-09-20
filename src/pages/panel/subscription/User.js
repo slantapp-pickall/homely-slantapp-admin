@@ -19,10 +19,12 @@ import {
   Button,
   Modal,
   ModalHeader,
-  ModalBody, ModalFooter
+  ModalBody, ModalFooter, Badge
 } from "reactstrap";
 import teamData from "./data/team";
 import { findUpper } from "../../../utils/Utils";
+import AuthFooter from "../../auth/AuthFooter";
+import { toast, ToastContainer } from "react-toastify";
 
 export const teamRole = [
   { value: "Member", label: "Member" },
@@ -39,8 +41,8 @@ const Users = () => {
   const toggleForm = () => setModalForm(!modalForm);
   useEffect(() => {
     const fetchData = async () => {
+
       try {
-        // const id = productId;
         const response = await fetch(`https://homely-h0gx.onrender.com/v1/user`, {
           method: "GET",
           headers: {
@@ -50,25 +52,50 @@ const Users = () => {
         });
 
         if (!response.ok) {
-          // Handle error if the response is not okay
+          toast.error(response.status);
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
 
-        // Check if the product exists and has images
         if (data.success === true) {
           setUsersData(data.data);
         }
       } catch (error) {
-        // Handle any errors here
+        toast.error(error.message);
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const toggleUser = async (_id) => {
+
+    try {
+      const response = await fetch(`https://homely-h0gx.onrender.com/v1/user/block/${_id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "Authorization": `Bearer ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        toast.error(response.status);
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.success === true) {
+        toast.success("Status changed");
+      }
+    } catch (error) {
+      toast.error(error.message);
+      console.error("Error fetching data:", error);
+    }
+  };
   return (
     <React.Fragment>
       <Head title="Users"></Head>
@@ -80,14 +107,14 @@ const Users = () => {
               <BlockTitle tag="h2" className="fw-normal">Manage Users</BlockTitle>
             </BlockHeadContent>
             <BlockHeadContent>
-              <ul className="nk-block-tools gx-3">
-                <li>
-                  <Button color="primary" onClick={toggleForm}>
-                    <Icon name="plus"></Icon>
-                    <span>Add User</span>
-                  </Button>
-                </li>
-              </ul>
+              {/*<ul className="nk-block-tools gx-3">*/}
+              {/*  <li>*/}
+              {/*    <Button color="primary" onClick={toggleForm}>*/}
+              {/*      <Icon name="plus"></Icon>*/}
+              {/*      <span>Add User</span>*/}
+              {/*    </Button>*/}
+              {/*  </li>*/}
+              {/*</ul>*/}
 
               <Modal isOpen={modalForm} toggle={toggleForm}>
                 <ModalHeader
@@ -228,12 +255,26 @@ const Users = () => {
                       </div>
                     </td>
                     <td className="tb-member-type tb-col-sm">
-                      <span>{item.isAdmin}</span>
+                      <Badge
+                        color={
+                          item.isAdmin === true
+                            ? "success"
+                            : "warning"
+                        }
+                        className="badge-dot"
+                      >
+                        {item.isAdmin ? "Admin" : "User"}
+                      </Badge>
                     </td>
                     <td className="tb-member-action">
                       <div className="d-none d-md-inline">
-                        <a href="#" className="link link-sm"><span>View</span></a>
-                        <a href="#" className="link link-sm link-danger"><span>Block</span></a>
+                        {
+                          item.blocked === false ?
+                            <a href="#" className="link link-sm link-danger"
+                               onClick={() => toggleUser(item._id)}><span>Block</span></a>
+                            :
+                            <a href="#" className="link link-sm link-success"><span>Unblock</span></a>
+                        }
                       </div>
                       <UncontrolledDropdown className="d-md-none">
                         <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
@@ -255,6 +296,8 @@ const Users = () => {
           </Card>
         </Block>
       </Content>
+      <AuthFooter />
+      <ToastContainer/>
     </React.Fragment>
   );
 };

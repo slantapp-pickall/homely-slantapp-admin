@@ -10,10 +10,6 @@ const navData = [
     text:'Personal'
   },
   {
-    link:'/profile-billing',
-    text:'Billing'
-  },
-  {
     link:'/profile-setting',
     text:'Settings'
   },

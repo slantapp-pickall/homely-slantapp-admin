@@ -583,6 +583,7 @@ export const productCardData = [
   // },
 ];
 
+
 export const categoryOptions = [
   {
     value: "Gadget",

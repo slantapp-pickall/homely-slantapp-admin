@@ -251,14 +251,42 @@ const PropertyDetails = ({ match }) => {
                           <li>
                             <div className="custom-control custom-radio custom-control-pro no-control">
                               <input
-                                type="radio"
+                                type="checkbox"
                                 className="custom-control-input"
                                 name="sizeCheck"
                                 id="sizeCheck1"
                                 checked={sliderData.available === true}
                               />
                               <label className="custom-control-label" htmlFor="sizeCheck1">
-                                Available
+                                {sliderData.available ? "Available" : "Unavailable"}
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="custom-control custom-radio custom-control-pro no-control">
+                              <input
+                                type="checkbox"
+                                className="custom-control-input"
+                                name="sizeCheck"
+                                id="sizeCheck1"
+                                checked={sliderData.vehicle === true}
+                              />
+                              <label className="custom-control-label" htmlFor="sizeCheck1">
+                                {sliderData.vehicle ? "Car Hire" : "No Car Hire"}
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div className="custom-control custom-radio custom-control-pro no-control">
+                              <input
+                                type="checkbox"
+                                className="custom-control-input"
+                                name="sizeCheck"
+                                id="sizeCheck1"
+                                checked={sliderData.gym === true}
+                              />
+                              <label className="custom-control-label" htmlFor="sizeCheck1">
+                                {sliderData.gym ? "Gym" : "No Gym"}
                               </label>
                             </div>
                           </li>
@@ -279,7 +307,7 @@ const PropertyDetails = ({ match }) => {
                         channel="youtube"
                         autoplay
                         isOpen={videoOpen}
-                        videoId={getYouTubeVideoId(sliderData.video)}
+                        videoId={"vYuDncdqGTs" || getYouTubeVideoId(sliderData.video)}
                         onClose={() => setVideoOpen(false)}
                       />
                       <a
@@ -366,7 +394,7 @@ const PropertyDetails = ({ match }) => {
                           <Link to={`${process.env.PUBLIC_URL}/property-details/${item._id}`}>{item.title}</Link>
                         </h5>
                         <div className="product-price text-primary h5">
-                          <small className="text-muted del fs-13px">${item.rent}</small> ${item.rent}
+                          <small className="text-muted del fs-13px">${(+item.rent * 0.5)?.toLocaleString()}</small> ${item.rent?.toLocaleString()}
                         </div>
                       </div>
                     </Card>

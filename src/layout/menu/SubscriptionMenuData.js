@@ -11,9 +11,14 @@ export const menu = [
     link: "/users"
   },
   {
-    icon: "account-setting",
+    icon: "airbnb",
     text: "Properties",
     link: "/properties"
+  },
+  {
+    icon: "truck",
+    text: "Cars",
+    link: "/cars"
   },
   {
     icon: "report-profit",
